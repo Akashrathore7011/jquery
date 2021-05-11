@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        /* body{
+            height: 90vh;
+            margin: 0%;
+        } */
+        #container{
+            position: relative;
+            background-image: url("https://i.ytimg.com/vi/JPJ1doUobGY/maxresdefault.jpg");
+            background-size: cover;
+        }
+        #img_1{
+             background-image: url("11.png");
+             position: absolute;
+             height: 150px;
+             width: 160px;
+             background-size: 100% 100%;
+             z-index: 2;
+             cursor: none;
+        }
+        #missile{
+            background-image: url("missile.png");
+            height: 60px;
+            width: 120px;
+            background-size: 100% 100%;
+            z-index: 1;
+            position: absolute;
+            transform: rotateZ(90deg);
+        }
+        #missile.block{
+            display: block;
+            animation: fire 0.3s ;
+            animation-delay: 0.1s;
+        }
+        @keyframes fire{
+            0%{
+                transform: translateY(0%) rotateZ(90deg);
+            }
+            100%{
+                transform: translateY(-700px) rotateZ(90deg);
+            }
+        }
+    </style>
+    <script src="mouse.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="img_1"></div>
+        <div id="missile"></div>
+    </div>
+   
+</body>
+</html>

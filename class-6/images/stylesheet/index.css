@@ -1,0 +1,65 @@
+/* body{
+    margin: 0%;
+}
+*{
+    box-sizing: border-box;
+}
+
+
+.inner-container {
+    height: 1250px;
+    width: 10000px;
+    background-image: url("../back.gif");
+    background-size: cover;
+}
+
+.image {
+    position: fixed;
+    bottom: 5%;
+    left: 40%;
+    z-index: 100;
+}
+
+.image img {
+    width: 150px; */
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#inner-container {
+    height: 1100px;
+    width: 10000px;
+    background-image: url("..//bbb.jpg");
+    /* background-size: cover; */
+}
+
+.image {
+    position: fixed;
+    bottom: 21%;
+    left: 40%;
+    z-index: 1;
+}
+
+.image img {
+    width: 150px;
+}

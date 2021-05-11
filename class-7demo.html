@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Gameframe{
+            width: 90%;
+            height: 80vh;
+            border: 2px dotted red;
+            position: relative;
+            margin: 0 auto;
+        }
+        .box{
+            width: 30px;
+            height: 30px;
+            background-color: purple;
+            position: absolute;
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="Gameframe">
+        <div class="box">
+
+        </div>
+    </div>
+    <script>
+       var move=0;
+       var count = 0;
+       var GameFrame = document.querySelector(".Gameframe");
+       var box = document.querySelector(".box");
+       var container = document.querySelector(".container");
+       container.addEventListener("keyup",movebox);
+
+       var drop = document.createElement("div");
+       drop.style.width = "35px";
+       drop.style.height = "35px";
+       drop.style.backgroundColor = "red";
+       drop.style.position = "absolute";
+       drop.className="drop";
+       GameFrame.appendChild(drop);
+
+       setInterval(function() {
+            drop.style.top = Math.floor(Math.random() * 500) + "px";
+            drop.style.left = Math.floor(Math.random() * 500) + "px";
+
+        }, 10000);
+
+        function movebox() {
+
+            key = event.keyCode;
+            if (key == 39) {
+                move = 3;
+                count += move;
+                box.style.left = count + "%";
+
+            }
+            if (key == 37) {
+                move = -3;
+                count += move;
+                box.style.left = count + "%";
+            }
+            key = event.keyCode;
+            if (key == 38) {
+                move = -3;
+                count += move;
+                box.style.top = count + "%";
+
+            }
+            if (key == 40) {
+                move = 3;
+                count += move;
+                box.style.top = count + "%";
+            }  
+          }
+
+
+    </script>
+</body>
+</html>

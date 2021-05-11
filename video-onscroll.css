@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+body{
+    height: 300vh;
+}
+.main{
+    position: relative;
+    position: fixed;
+    width: 100%;
+
+}
+.main > div{
+    position: absolute;
+}
+.main > .video-container{
+    overflow:hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.main> .video-container >video{
+    width:100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+.main > .text-container{
+    margin: 10% 0 0 8%;
+    }
+    .main >.text-container >.head{
+        font-size: 6rem;
+        color: white;
+        margin-bottom: 20px;
+    }
+    .main >.text-container> .para{
+        font-size: 3rem;
+        color: white;
+    }

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll animation</title>
+    <style>
+        body {
+            overflow-x: hidden;
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .col {
+            width: 30%;
+            border: 2px solid red;
+            margin: 0px 10px;
+            padding: 10px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #section-1 .col:first-child,#section-2 .col:first-child
+        , #section-3 .col:first-child, #section-4 .col:first-child  {
+            transform: translateX(320%);
+            transition: 1s;
+            transition-duration: 1s;
+        }
+
+        #section-1 .col:last-child, #section-2 .col:last-child,
+        #section-3 .col:last-child,#section-4 .col:last-child  {
+            transform: translateX(-320%);
+            transition: 1s;
+            transition-duration: 1s;
+        }
+        
+        #section-1.animate .col,
+        #section-2.animate .col,
+        #section-3.animate .col,
+        #section-4.animate .col
+        {
+            transform: translateX(0%);
+            transition: 3s;
+            transition-delay: .5s;
+            /* box-shadow: 1px 2px gray; */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jquery scroll animation</h1>
+    <section id="section-1">
+        <h2>section 1</h2>
+        <div class="row">
+            <div iv class="col">
+                <h2>this is column_1</h2>
+                <img src="img.jpg" alt="">
+                <hr>
+                <h5> Heading bofore Button</h5>
+                <button>Click Here</button>
+                <h5>Heading after button</h5>
+            </div>
+            <div iv class="col">
+                <h2>this is column_2</h2>
+                <img src="img.jpg" alt="">
+                <hr>
+                <h5> Heading bofore Button</h5>
+                <button>Click Here</button>
+                <h5>Heading after button</h5>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-2">
+        <h2>section 2</h2>
+        <div class="row">
+            <div iv class="col">
+                <h2>this is column_3</h2>
+                <img src="img.jpg" alt="">
+                <hr>
+                <h5> Heading bofore Button</h5>
+                <button>Click Here</button>
+                <h5>Heading after button</h5>
+            </div>
+            <div iv class="col">
+                <h2>this is column_4</h2>
+                <img src="img.jpg" alt="">
+                <hr>
+                <h5> Heading bofore Button</h5>
+                <button>Click Here</button>
+                <h5>Heading after button</h5>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-3">
+        <h2>section 3</h2>
+        <div class="row">
+            <div iv class="col">
+                <h2>this is column_5</h2>
+                <img src="img.jpg" alt="">
+                <hr>
+                <h5> Heading bofore Button</h5>
+                <button>Click Here</button>
+                <h5>Heading after button</h5>
+            </div>
+            <div iv class="col">
+                <h2>this is column_6</h2>
+                <img src="img.jpg" alt="">
+                <hr>
+                <h5> Heading bofore Button</h5>
+                <button>Click Here</button>
+                <h5>Heading after button</h5>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="section-4">
+        <h2>section 4</h2>
+        <div class="row">
+            <div iv class="col">
+                <h2>this is column_7</h2>
+                <img src="img.jpg" alt="">
+                <hr>
+                <h5> Heading bofore Button</h5>
+                <button>Click Here</button>
+                <h5>Heading after button</h5>
+            </div>
+            <div iv class="col">
+                <h2>this is column_8</h2>
+                <img src="img.jpg" alt="">
+                <hr>
+                <h5> Heading bofore Button</h5>
+                <button>Click Here</button>
+                <h5>Heading after button</h5>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(document).ready(function(){
+            $("#section-1").addClass("animate");
+
+        });
+        $(window).scroll(function(){
+            var scr = $(window).scrollTop();
+            // console.log(scr);
+            var sec_2_offsetY = $("#section-2").offset().top;
+            // console.log(sec_2_offsetY);
+            // console.log("scroll:" + scr + "sec 2 scroll =" + sec_2_offsetY);
+            if(scr > sec_2_offsetY/2){
+                $("#section-2").addClass("animate");
+            }
+            else{
+                $("#section-2").removeClass("animate");
+            }
+           
+            var sec_3_offsetY = $("#section-3").offset().top;
+               console.log(sec_3_offsetY);
+
+           if(scr > sec_3_offsetY/2){
+               $("#section-3").addClass("animate");
+           }
+           else{
+            $("#section-3").removeClass("animate");
+           }
+
+           var sec_4_offsetY = $("#section-4").offset().top;
+               console.log(sec_4_offsetY);
+
+           if(scr > sec_4_offsetY/2){
+               $("#section-4").addClass("animate");
+           }
+           else{
+            $("#section-4").removeClass("animate");
+           }
+
+
+        });
+    </script>
+
+</body>
+
+</html>

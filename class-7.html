@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #GameFrame {
+            width: 90%;
+            margin: 0 auto;
+            height: 80vh;
+            border: 2px solid red;
+            position: relative;
+        }
+        
+        #box {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body id="container">
+    <div id="GameFrame">
+        <div id="box"></div>
+    </div>
+
+    <script>
+        var move = 0;
+        var count = 0;
+        var box = document.querySelector("#box");
+        var container = document.querySelector("#container");
+        container.addEventListener("keydown", moveBg);
+
+        var drop = document.createElement("div");
+        drop.style.width = "25px";
+        drop.style.height = "25px";
+        drop.style.backgroundColor = "blue";
+        drop.style.position = "absolute";
+        drop.className = "drop";
+        frame = document.querySelector("#GameFrame");
+        frame.appendChild(drop);
+
+        setInterval(function() {
+            drop.style.top = parseInt(Math.random() * 500) + "px";
+            drop.style.left = parseInt(Math.random() * 500) + "px";
+
+        }, 10000);
+
+        function moveBg() {
+
+            key = event.keyCode;
+            if (key == 39) {
+                move = 3;
+                count += move;
+                box.style.left = count + "%";
+
+            }
+            if (key == 37) {
+                move = -3;
+                count += move;
+                box.style.left = count + "%";
+            }
+
+            if (key == 38) {
+                move = -3;
+                count += move;
+                box.style.top = count + "%";
+
+            }
+            if (key == 40) {
+                move = 3;
+                count += move;
+                box.style.top = count + "%";
+            }
+
+            box_x = box.offsetLeft;
+            box_y = box.offsetTop;
+
+
+            drop_x = drop.offsetLeft;
+            drop_y = drop.offsetTop;
+
+            dist = Math.sqrt(Math.pow((box_x - drop_x), 2) + Math.pow((box_y - drop_y), 2))
+
+            if (dist <= 25) {
+                console.log("Collision Detected");
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

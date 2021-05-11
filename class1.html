@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+         /* #test-1:hover{background-color: green;
+         border-radius: 50%;
+         box-sizing: border-box;
+         background-size: cover;
+
+         } */
+         *{
+            margin: 0%;
+            padding: 0%;
+         }
+         #test{
+             width: 100%;
+             height: 200px;
+             background-color: red;
+             border: 5px solid black;
+         }
+    </style>
+</head>
+
+<body>
+    
+   
+    <div id="test"> 
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos reprehenderit optio quae voluptatem hic ipsam
+            temporibus repellat dolore tenetur odit. Fuga expedita fugit odio, repudiandae asperiores nihil natus
+            praesentium, illo minus nisi unde voluptates perspiciatis saepe exercitationem in atque eos molestiae
+            voluptatibus similique sapiente dolor nostrum. Sapiente debitis et iusto!</p>
+        </div>
+    <button id="btn">hide/show</button>
+    <!-- <div id="test-2">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos reprehenderit optio quae voluptatem hic ipsam
+            temporibus repellat dolore tenetur odit. Fuga expedita fugit odio, repudiandae asperiores nihil natus
+            praesentium, illo minus nisi unde voluptates perspiciatis saepe exercitationem in atque eos molestiae
+            voluptatibus similique sapiente dolor nostrum. Sapiente debitis et iusto!</p>
+    </div>
+    <button class="btn-2">test-2</button> -->
+    <script>
+        $("#btn").click(function(){
+            // let a = $("#test-1").html();
+            //   $("#test").slideToggle();
+              $("#test").toggle(500);
+             $("#test").css({ "width":"500px", 
+               "height":"200px", "background":"red",
+               "margin-left":"50px", "border":"1px solid black",
+
+        });
+        //    console.log(a);
+        })
+    </script>
+</body>
+
+</html>

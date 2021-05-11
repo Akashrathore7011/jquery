@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .row{
+            display: flex;
+        }
+        .col{
+            width: 30%;
+            margin: 0px 10px;
+            padding: 10px;
+            border: 2px  solid red;
+
+        }
+        img{
+            width: 100%;
+           
+        }
+    </style>
+</head>
+<body>
+   <div class="row">
+    <div class="col">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <img src="11.jpg" alt="">
+        <hr>
+        <h5>Lorem ipsum dolor sit amet.</h5>
+    <button>click mme</button>
+    <h5>Lorem ipsum dolor sit amet.</h5>
+    </div>
+
+    <div class="col">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <img src="123.jpg" alt="">
+        <hr>
+        <h5>Lorem ipsum dolor sit amet.</h5>
+    <button>click mme</button>
+    <h5>Lorem ipsum dolor sit amet.</h5>
+    </div>
+
+    <div class="col">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <img src="11.jpg" alt="">
+        <hr>
+        <h5>Lorem ipsum dolor sit amet.</h5>
+    <button>click mme</button>
+    <h5>Lorem ipsum dolor sit amet.</h5>
+    </div>
+</div>
+<script>
+    $("button").click(function() {
+        $(this).siblings("h5").hide(1000);
+        // $(this).siblings("img").hide(1000);
+        // $(this).parent().hide(1000);
+        // $(this).parents().slideToggle(1000);
+        // $(this).parentsUntil('.row').slideToggle(1000);
+        // $(this).prev("h5").hide(1000);
+        // $(this).next("h5").hide(1000);
+        // $(this).parent().siblings().find("img").hide(1000);
+        // $(this).parent().next().find("img").hide(1000);
+
+    });
+    
+        </script>
+</body>
+</html>
